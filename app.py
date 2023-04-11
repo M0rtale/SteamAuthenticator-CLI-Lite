@@ -5,7 +5,7 @@
 #
 ###################################################################################
 
-
+from dotenv import dotenv_values
 import sys
 from base64 import b64decode
 from time import time
@@ -48,9 +48,11 @@ def Gen_Code(share):
     return ''.join(chr(i) for i in codeArray)
 
 if __name__ == "__main__":
-    #shr = os.getenv('SHARED_SECRET')
-    #print(shr)
-    shr = sys.argv[1]
+    #shr = sys.argv[1]
+    try:
+        shr = dotenv_values(".env")["SHARED_SECRET"]
+    except KeyError:
+        print('Usage: echo "SHARED_SECRET=\\"YOUR_SECRET_HERE\\"" >> .env')
+        exit(0)
     print(Gen_Code(shr))
-
 
