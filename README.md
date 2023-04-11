@@ -14,9 +14,16 @@ OR MODIFY YOUR CODE WITH BASIC AUTHENTICATION OTHERWISE YOU WILL LOSE
 YOUR STEAM AUTH (run the iptable command)
 
 ## Install
+First, get your shared secret from the maFile or whereever
+Then
 ```
 git clone https://github.com/M0rtale/SteamAuthenticator-CLI-Lite.git
 cd SteamAuthenticator-CLI-Lite
+```
+
+Then replace ```YOUR_SECRET_HERE`` with your shared secret and 
+
+```
 echo SHARED_SECRET=YOUR_SECRET_HERE >> .env
 ```
 
@@ -49,6 +56,9 @@ docker stop CONTAINER_ID -f
 ```
 nc 127.0.0.1 6789
 ```
+
+# CREDITS
+geel9 - https://github.com/geel9/SteamAuth
 
 # TODO
 * Add Confirmation Support
